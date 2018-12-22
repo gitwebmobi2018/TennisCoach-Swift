@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="mXa-Vc-R4p">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Level View Controller-->
+        <scene sceneID="nqU-Wf-9dn">
+            <objects>
+                <viewController id="mXa-Vc-R4p" customClass="LevelViewController" customModule="ita" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qgA-lA-M2z"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ciu-Tu-IJj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="QHo-lb-BVH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="75" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8bS-jc-2bx">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="75" id="nyT-Z0-MNc">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="75"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nyT-Z0-MNc" id="RTJ-QA-0x2">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="mXa-Vc-R4p" id="Gtl-Vs-fHa"/>
+                                    <outlet property="delegate" destination="mXa-Vc-R4p" id="Fi3-zq-lqv"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="8bS-jc-2bx" firstAttribute="top" secondItem="QHo-lb-BVH" secondAttribute="top" id="Blc-7Y-uZe"/>
+                            <constraint firstItem="8bS-jc-2bx" firstAttribute="leading" secondItem="QHo-lb-BVH" secondAttribute="leading" id="G0q-jR-5nA"/>
+                            <constraint firstItem="Ciu-Tu-IJj" firstAttribute="top" secondItem="8bS-jc-2bx" secondAttribute="bottom" id="lsj-fm-x2G"/>
+                            <constraint firstAttribute="trailing" secondItem="8bS-jc-2bx" secondAttribute="trailing" id="rq0-YB-qPC"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="8bS-jc-2bx" id="Pio-BP-n4T"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="E1D-lE-ZcY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="141.59999999999999" y="182.15892053973016"/>
+        </scene>
+    </scenes>
+</document>

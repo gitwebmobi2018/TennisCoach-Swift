@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="3Wg-sg-baE">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Coach View Controller-->
+        <scene sceneID="LVC-rk-LOE">
+            <objects>
+                <viewController id="VOE-Rm-3We" customClass="CoachViewController" customModule="ita" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1L2-nq-uX9"/>
+                        <viewControllerLayoutGuide type="bottom" id="haY-Oh-pp5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="VRZ-NY-WeB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="Ha7-7Y-Diy">
+                                <rect key="frame" x="122.5" y="104" width="131.5" height="131.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Ha7-7Y-Diy" secondAttribute="height" multiplier="1:1" id="6xI-S6-SZP"/>
+                                </constraints>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="PnZ-uW-Xj9">
+                                <rect key="frame" x="0.0" y="270.5" width="375" height="396.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="cmi-cb-0Ru">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cmi-cb-0Ru" id="Zo8-XT-5jd">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="VOE-Rm-3We" id="bmn-5D-6ZA"/>
+                                    <outlet property="delegate" destination="VOE-Rm-3We" id="7VA-RH-Ynw"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="PnZ-uW-Xj9" firstAttribute="leading" secondItem="VRZ-NY-WeB" secondAttribute="leading" id="7cO-Me-VSo"/>
+                            <constraint firstItem="Ha7-7Y-Diy" firstAttribute="top" secondItem="1L2-nq-uX9" secondAttribute="bottom" constant="40" id="8LB-mS-7Bo"/>
+                            <constraint firstItem="Ha7-7Y-Diy" firstAttribute="width" secondItem="VRZ-NY-WeB" secondAttribute="width" multiplier="0.35" id="KCk-Ww-wCj"/>
+                            <constraint firstAttribute="trailing" secondItem="PnZ-uW-Xj9" secondAttribute="trailing" id="NIN-fH-OEb"/>
+                            <constraint firstItem="Ha7-7Y-Diy" firstAttribute="centerX" secondItem="VRZ-NY-WeB" secondAttribute="centerX" id="QwE-7R-r1I"/>
+                            <constraint firstItem="PnZ-uW-Xj9" firstAttribute="top" secondItem="Ha7-7Y-Diy" secondAttribute="bottom" constant="35" id="s8e-xI-CGp"/>
+                            <constraint firstItem="haY-Oh-pp5" firstAttribute="top" secondItem="PnZ-uW-Xj9" secondAttribute="bottom" id="uiU-W8-xd7"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="QLw-98-kSg">
+                        <barButtonItem key="rightBarButtonItem" image="phone_navigationIcon" id="PAt-5T-nb4">
+                            <connections>
+                                <action selector="callCoachAction:" destination="VOE-Rm-3We" id="hXn-m3-LDf"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="coachImageView" destination="Ha7-7Y-Diy" id="JFu-Ot-KFn"/>
+                        <outlet property="tableView" destination="PnZ-uW-Xj9" id="JWs-OT-ydy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pyx-dd-IEb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2060" y="169.56521739130437"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="j2V-eS-jca">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3Wg-sg-baE" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="zck-hv-yBX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="VOE-Rm-3We" kind="relationship" relationship="rootViewController" id="VfU-oV-99V"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dxt-gQ-PW5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1120.8" y="169.56521739130437"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="phone_navigationIcon" width="25" height="25"/>
+        <image name="user" width="2031" height="2031"/>
+    </resources>
+</document>
